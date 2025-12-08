@@ -1,0 +1,9 @@
+import os
+import sapien
+
+token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhcnJvd3JoQHN0YW5mb3JkLmVkdSIsImlwIjoiMTcyLjIwLjAuMSIsInByaXZpbGVnZSI6MSwiZmlsZU9ubHkiOnRydWUsImlhdCI6MTc2NDkxMjk4MCwiZXhwIjoxNzk2NDQ4OTgwfQ.dyF9B99soWYK_qSUum6tdj5ziIT0dRx_x-iiyE1HvZs"
+
+object_id = 179
+
+path = sapien.asset.download_partnet_mobility(object_id, token)
+print("Downloaded to:", path)

@@ -6,6 +6,6 @@ CUDA_VISIBLE_DEVICES=$device MAMBA_TYPE=JLTASTET torchrun --standalone --nnodes 
     --llm_name mamba-2.8b \
     --vision_encoder CLIP224 \
     --save_prefix 'result/robomamba' \
-    --checkpoint 'path_to_checkpoint.pth' \
+    --checkpoint 'checkpoint/checkpoint.pth' \
     --run_type VLM \
     --dataset robovqa

@@ -27,8 +27,8 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 path_to_pope = ""
 path_to_gqa = ""
 path_to_vqav2 = ""
-path_to_okvqa = ""
-path_to_coco_val_2014 = ""
+path_to_okvqa = "/home/ec2-user/data/robomamba/okvqa"
+path_to_coco_val_2014 = "/home/ec2-user/data/robomamba/coco/val2014"
 path_to_robovqa = ""
 path_to_sapien = ""
 path_to_vizwiz = ""
@@ -411,34 +411,34 @@ def run(args):
     model.eval()
 
     datasets = {
-        'pope': {
-            'load': load_dataset_pope,
-            'judge': judge_pope
-        },
-        'vqav2': {
-            'load': load_dataset_vqa,
-            'judge': judge_vqa
-        },
-        'gqa': {
-            'load': load_dataset_gqa,
-            'judge': judge_gqa
-        },
-        'vizwiz': {
-            'load': load_dataset_vizwiz,
-            'judge': judge_viz
-        },
+        # 'pope': {
+        #     'load': load_dataset_pope,
+        #     'judge': judge_pope
+        # },
+        # 'vqav2': {
+        #     'load': load_dataset_vqa,
+        #     'judge': judge_vqa
+        # },
+        # 'gqa': {
+        #     'load': load_dataset_gqa,
+        #     'judge': judge_gqa
+        # },
+        # 'vizwiz': {
+        #     'load': load_dataset_vizwiz,
+        #     'judge': judge_viz
+        # },
         'okvqa': {
             'load': load_dataset_okvqa,
             'judge': judge_okvqa
         },
-        'manip': {  
-            'load': load_dataset_manip,
-            'judge': judge_manip
-        },
-        'robovqa':{
-            'load': load_dataset_robovqa,
-            'judge': judge_robovqa
-        }
+        # 'manip': {  
+        #     'load': load_dataset_manip,
+        #     'judge': judge_manip
+        # },
+        # 'robovqa':{
+        #     'load': load_dataset_robovqa,
+        #     'judge': judge_robovqa
+        # }
     }
 
     device_idx = 0
@@ -456,7 +456,9 @@ def run(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # model configuration args
-    parser.add_argument("--vision_encoder_name", default='SIGLIP', type=str)
+    # Use a valid vision encoder key from vision_encoders in model/vision.py
+    # Options: SIGLIP256, SIGLIP384, CLIP224, CLIP336
+    parser.add_argument("--vision_encoder_name", default='CLIP224', type=str)
     parser.add_argument("--llm_name", default='790m', type=str)
     parser.add_argument(
         "--checkpoint",

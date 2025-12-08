@@ -1,4 +1,42 @@
+## Environment and editor
+.venv/
+venv/
 robomamba-env/
-___p
+.env
+.env.*
+*.env
 __pycache__/
-*.pyc
+*.py[cod]
+*.swp
+.DS_Store
+
+## Logs and experiment outputs
+logs/
+result/
+*.log
+*.out
+nohup.out
+*.tmp
+
+## Checkpoints, datasets, and large artifacts
+src/checkpoint/
+src/data/
+checkpoints/
+weights/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.onnx
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.pkl
+*.tfrecord*
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.rar

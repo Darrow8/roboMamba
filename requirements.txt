@@ -1,6 +1,14 @@
+# Core PyTorch (install first via: pip install torch==2.2.0+cu121 torchvision==0.17.0+cu121 torchaudio==2.2.0+cu121 --index-url https://download.pytorch.org/whl/cu121)
+torch==2.2.0+cu121
+torchvision==0.17.0+cu121
+torchaudio==2.2.0+cu121
+
+# Mamba dependencies (install separately after torch)
+# mamba_ssm==1.2.0.post1
+# causal_conv1d==1.2.0.post2
+
+# Other dependencies
 accelerate==0.33.0
-causal_conv1d @ git+https://github.com/Dao-AILab/causal-conv1d.git
-mamba_ssm @ git+https://github.com/state-spaces/mamba.git@v2.2.0
 numpy==1.26.3
 pandas==2.2.2
 peft==0.12.0
@@ -10,12 +18,11 @@ scipy==1.13.1
 seaborn==0.13.2
 sympy==1.12
 timm==1.0.7
---extra-index-url https://download.pytorch.org/whl/cu121
-torch==2.1.0+cu121
-torchaudio==2.1.0+cu121
-torchvision==0.16.0+cu121
 transformers==4.43.3
-triton==2.1.0
+triton==2.2.0
 wandb==0.17.8
-jieba
 nltk
+pynvml
+jieba
+einops
+tokenizers==0.19.1
